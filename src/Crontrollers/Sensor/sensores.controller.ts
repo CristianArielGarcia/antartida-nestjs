@@ -5,9 +5,10 @@ import {
   HttpCode,
   Param,
   Post,
+  Put,
   Res,
 } from '@nestjs/common';
-import { CreateSensorDTO } from 'src/Dtos/Sensor/sensor.dto';
+import { CreateSensorDTO, UpdateSensorDTO } from 'src/Dtos/Sensor/sensor.dto';
 
 @Controller('Sensores')
 export class SensorController {
@@ -22,7 +23,11 @@ export class SensorController {
     return `This return a #${id} sensor`;
   }
   @Post()
-  createOne(@Body() sensor: CreateSensorDTO): boolean {
-    return true;
+  createOne(@Body() sensor: CreateSensorDTO): CreateSensorDTO {
+    return sensor;
+  }
+  @Put()
+  updateOne(@Body() sensor: UpdateSensorDTO): UpdateSensorDTO {
+    return sensor;
   }
 }
