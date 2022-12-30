@@ -7,6 +7,7 @@ import { MedicionesController } from './Crontrollers/Medicion/medicion.controlle
 import { RolController } from './Crontrollers/Rol/rol.controller';
 import { SensorController } from './Crontrollers/Sensor/sensores.controller';
 import { UsuariosController } from './Crontrollers/Usuario/usuario.controller';
+import { SensorService } from './Services/Sensor/sensor.service';
 
 @Module({
   imports: [],
@@ -19,6 +20,6 @@ import { UsuariosController } from './Crontrollers/Usuario/usuario.controller';
     LecturaController,
     MedicionesController,
   ],
-  providers: [AppService],
+  providers: [AppService, SensorService],
 })
 export class AppModule {}

@@ -7,41 +7,38 @@ import {
   Param,
   Post,
   Put,
-  Res,
 } from '@nestjs/common';
-import {
-  CreateSensorDTO,
-  Sensor,
-  UpdateSensorDTO,
-} from 'src/Dtos/Sensor/sensor.dto';
+import { CreateSensorDTO, UpdateSensorDTO } from 'src/Dtos/Sensor/sensor.dto';
+import { SensorService } from 'src/Services/Sensor/sensor.service';
 
 @Controller('Sensores')
 export class SensorController {
+  constructor(private readonly sensorService: SensorService) {}
   @Get()
   @HttpCode(200)
   // findAll(@Res({ passthrough: true }) sensores: any): string {
   //tipar los sensores
   findAll(): string {
-    return 'Aca devuelvo todos los sensores';
+    return this.sensorService.getAllSensores();
   }
   @Get(':id')
   findOne(@Param('id') id: number): string {
-    return `This return a #${id} sensor`;
+    return this.sensorService.getById(id);
   }
   @Get(':fechaLectura')
   findByFechaLectura(@Param('fechaLectura') fechaLectura: string): string {
-    return `Lista de sensores con lecturas en: #${fechaLectura} `;
+    return this.sensorService.getByFechaLectura(fechaLectura);
   }
   @Post()
   createOne(@Body() sensor: CreateSensorDTO): CreateSensorDTO {
-    return sensor;
+    return this.sensorService.create(sensor);
   }
   @Put()
   updateOne(@Body() sensor: UpdateSensorDTO): UpdateSensorDTO {
-    return sensor;
+    return this.sensorService.update(sensor);
   }
   @Delete(':id')
   removeOne(@Param('id') id: number): number {
-    return id;
+    return this.sensorService.delete(id);
   }
 }
