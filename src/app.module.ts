@@ -1,12 +1,15 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EventoController } from './Crontrollers/Evento/evento.controller';
-import { LecturaController } from './Crontrollers/Lectura/lectura.controller';
-import { MedicionesController } from './Crontrollers/Medicion/medicion.controller';
-import { RolController } from './Crontrollers/Rol/rol.controller';
-import { SensorController } from './Crontrollers/Sensor/sensores.controller';
-import { UsuariosController } from './Crontrollers/Usuario/usuario.controller';
+import { EventoController } from './Controllers/Evento/evento.controller';
+import { LecturaController } from './Controllers/Lectura/lectura.controller';
+import { MedicionesController } from './Controllers/Medicion/medicion.controller';
+import { RolController } from './Controllers/Rol/rol.controller';
+import { SensorController } from './Controllers/Sensor/sensores.controller';
+import { UsuariosController } from './Controllers/Usuario/usuario.controller';
+import { EventoService } from './Services/Evento/evento.service';
+import { LecturaService } from './Services/Lectura/lectura.service';
+import { MedicionService } from './Services/Medicion/medicion.service';
 import { SensorService } from './Services/Sensor/sensor.service';
 
 @Module({
@@ -20,6 +23,12 @@ import { SensorService } from './Services/Sensor/sensor.service';
     LecturaController,
     MedicionesController,
   ],
-  providers: [AppService, SensorService],
+  providers: [
+    AppService,
+    SensorService,
+    EventoService,
+    LecturaService,
+    MedicionService,
+  ],
 })
 export class AppModule {}
