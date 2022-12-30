@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSensorDTO, UpdateSensorDTO } from 'src/Dtos/Sensor/sensor.dto';
+import { CreateSensorDTO, UpdateSensorDTO } from 'src/DTOs/Sensor/sensor.dto';
 
 @Injectable()
 export class SensorService {

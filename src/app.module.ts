@@ -10,7 +10,9 @@ import { UsuariosController } from './Controllers/Usuario/usuario.controller';
 import { EventoService } from './Services/Evento/evento.service';
 import { LecturaService } from './Services/Lectura/lectura.service';
 import { MedicionService } from './Services/Medicion/medicion.service';
+import { RolService } from './Services/Rol/rol.service';
 import { SensorService } from './Services/Sensor/sensor.service';
+import { UsuarioService } from './Services/Usuario/usuario.service';
 
 @Module({
   imports: [],
@@ -29,6 +31,8 @@ import { SensorService } from './Services/Sensor/sensor.service';
     EventoService,
     LecturaService,
     MedicionService,
+    RolService,
+    UsuarioService,
   ],
 })
 export class AppModule {}

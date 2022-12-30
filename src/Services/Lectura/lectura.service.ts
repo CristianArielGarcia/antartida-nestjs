@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LecturaCreateDTO } from 'src/Dtos/Lectura/lectura.dto';
+import { LecturaCreateDTO } from 'src/DTOs/Lectura/lectura.dto';
 
 @Injectable()
 export class LecturaService {

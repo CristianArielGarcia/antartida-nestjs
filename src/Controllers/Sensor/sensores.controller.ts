@@ -8,7 +8,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateSensorDTO, UpdateSensorDTO } from 'src/Dtos/Sensor/sensor.dto';
+import { CreateSensorDTO, UpdateSensorDTO } from 'src/DTOs/Sensor/sensor.dto';
 import { SensorService } from 'src/Services/Sensor/sensor.service';
 
 @Controller('Sensores')
